@@ -63,6 +63,9 @@
 - (void)addNewAcronym:(Acronym *)acronym; {
 	NSLog(@"Adding new acronym");
 	[acronyms addObject:acronym];
+
+	[acronyms sortUsingSelector:@selector(compare:)];
+	
 	[self.tableView reloadData];
 }
 
@@ -93,6 +96,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [acronyms removeObjectAtIndex:indexPath.row];
+		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
 
 
 #pragma mark -
