@@ -7,6 +7,7 @@
 //
 
 #import "AcronymTableViewController.h"
+#import "AcronymDetailViewController.h"
 #import "NewAcronymViewController.h"
 #import "Acronym.h"
 
@@ -43,7 +44,7 @@
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAcronym:)];	
 	
 	self.navigationItem.rightBarButtonItem = addButton;
-	[self.navigationItem setRightBarButtonItem:addButton];
+	//[self.navigationItem setRightBarButtonItem:addButton];
 	
 	[self setTitle:@"Acronyms"];
 	
@@ -130,6 +131,8 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
+	
+	[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     // Configure the cell...
     cell.textLabel.text = [[acronyms objectAtIndex:indexPath.row] letters];
@@ -184,18 +187,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
 	Acronym *acronym = [acronyms objectAtIndex:indexPath.row];
-	NewAcronymViewController *acronymViewController = [[NewAcronymViewController alloc] init];
-	//[acronymViewController setAcronym:acronym];
-	[self.navigationController pushViewController:acronymViewController animated:YES];
-	[acronymViewController release];
+	AcronymDetailViewController *acronymDetailViewController = [[AcronymDetailViewController alloc] init];
+	[acronymDetailViewController setTitle:acronym.letters];
+	[self.navigationController pushViewController:acronymDetailViewController animated:YES];
+	acronymDetailViewController.meaning.text = acronym.meaning;
+	[acronymDetailViewController release];
 	
 }
 

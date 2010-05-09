@@ -17,6 +17,8 @@
 		DD4C2C921195FA19007560AD /* NewAcronymViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C2C901195FA19007560AD /* NewAcronymViewController.m */; };
 		DD4C2C931195FA19007560AD /* NewAcronymViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4C2C911195FA19007560AD /* NewAcronymViewController.xib */; };
 		DD4C2CFA1195FEFC007560AD /* Acronym.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C2CF91195FEFC007560AD /* Acronym.m */; };
+		DD4C2DD911966346007560AD /* AcronymDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C2DD711966346007560AD /* AcronymDetailViewController.m */; };
+		DD4C2DDA11966346007560AD /* AcronymDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4C2DD811966346007560AD /* AcronymDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		DD4C2C911195FA19007560AD /* NewAcronymViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewAcronymViewController.xib; path = Classes/NewAcronymViewController.xib; sourceTree = "<group>"; };
 		DD4C2CF81195FEFC007560AD /* Acronym.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Acronym.h; sourceTree = "<group>"; };
 		DD4C2CF91195FEFC007560AD /* Acronym.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Acronym.m; sourceTree = "<group>"; };
+		DD4C2DD611966346007560AD /* AcronymDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcronymDetailViewController.h; sourceTree = "<group>"; };
+		DD4C2DD711966346007560AD /* AcronymDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcronymDetailViewController.m; sourceTree = "<group>"; };
+		DD4C2DD811966346007560AD /* AcronymDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AcronymDetailViewController.xib; path = Classes/AcronymDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,8 @@
 				DD4C2C901195FA19007560AD /* NewAcronymViewController.m */,
 				DD4C2CF81195FEFC007560AD /* Acronym.h */,
 				DD4C2CF91195FEFC007560AD /* Acronym.m */,
+				DD4C2DD611966346007560AD /* AcronymDetailViewController.h */,
+				DD4C2DD711966346007560AD /* AcronymDetailViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -101,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				DD4C2DD811966346007560AD /* AcronymDetailViewController.xib */,
 				DD4C2C911195FA19007560AD /* NewAcronymViewController.xib */,
 				8D1107310486CEB800E47090 /* AcronymManager-Info.plist */,
 			);
@@ -161,6 +169,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				DD4C2C931195FA19007560AD /* NewAcronymViewController.xib in Resources */,
+				DD4C2DDA11966346007560AD /* AcronymDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +185,7 @@
 				DD4C2C041195F181007560AD /* AcronymTableViewController.m in Sources */,
 				DD4C2C921195FA19007560AD /* NewAcronymViewController.m in Sources */,
 				DD4C2CFA1195FEFC007560AD /* Acronym.m in Sources */,
+				DD4C2DD911966346007560AD /* AcronymDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
