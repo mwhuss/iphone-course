@@ -10,7 +10,14 @@
 
 @implementation NESControllerViewController
 
-
+@synthesize aButton;
+@synthesize bButton;
+@synthesize startButton;
+@synthesize selectButton;
+@synthesize upButton;
+@synthesize downButton;
+@synthesize leftButton;
+@synthesize rightButton;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -36,34 +43,63 @@
 	[self.view setBackgroundColor:[UIColor blackColor]];
 	
 	UILabel *nintendo = [[UILabel alloc] initWithFrame:CGRectMake(280, 60, 200, 50)];
-	[nintendo setText:@"Nintendo"];
+	[nintendo setText:@"Pretendo"];
 	[nintendo setFont:[UIFont fontWithName:@"Arial Rounded MT Bold" size:25.0]];
 	[nintendo setTextColor:[UIColor redColor]];
 	[nintendo setBackgroundColor:[UIColor blackColor]];
 	
 	[self.view addSubview:nintendo];
 	
-	UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[aButton setFrame:CGRectMake(300, 220, 50, 50)];
+	self.aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[aButton setFrame:CGRectMake(350, 220, 50, 50)];
 	[aButton setTitle:@"A" forState:UIControlStateNormal];
-	[aButton addTarget:self action:@selector(aButtonPressed:) forControlEvents:UIControlEventTouchDown];
+	[aButton addTarget:self action:@selector(actionButtonPressed:) forControlEvents:UIControlEventTouchDown];
 	[self.view addSubview:aButton];
 	
-	UIButton *bButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[bButton setFrame:CGRectMake(370, 220, 50, 50)];
+	self.bButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[bButton setFrame:CGRectMake(420, 220, 50, 50)];
 	[bButton setTitle:@"B" forState:UIControlStateNormal];
+	[bButton addTarget:self action:@selector(actionButtonPressed:) forControlEvents:UIControlEventTouchDown];
 	[self.view addSubview:bButton];
 	
-	//UIButton *selectButton = [[UIButton alloc] initWithFrame:CGRectMake(170, 280, 50, 10)];
-	//UIButton *selectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	//[selectButton setFrame:CGRectMake(170, 280, 50, 10)];
-	//[selectButton setBackgroundColor:[UIColor grayColor]];
+	//self.selectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//	[selectButton setFrame:CGRectMake(170, 250, 50, 20)];
+//	[self.view addSubview:selectButton];
+//
+//	self.startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//	[startButton setFrame:CGRectMake(240, 250, 50, 20)];
+//	[self.view addSubview:startButton];
 	
-	//[self.view addSubview:selectButton];
+	self.downButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[downButton setFrame:CGRectMake(75, 250, 50, 50)];
+	[self.view addSubview:downButton];
+	
+	self.upButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[upButton setFrame:CGRectMake(75, 150, 50, 50)];
+	[self.view addSubview:upButton];
+	
+	self.leftButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[leftButton setFrame:CGRectMake(15, 200, 50, 50)];
+	[self.view addSubview:leftButton];
+	
+	self.rightButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[rightButton setFrame:CGRectMake(135, 200, 50, 50)];
+	[self.view addSubview:rightButton];
+	
+	UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 60, 150, 20)];
+
+	[self.view addSubview:slider];
+	
+	
 }
 
-- (void)aButtonPressed:(id)sender {
-	NSLog(@"A Button Pressed");
+- (void)actionButtonPressed:(id)sender {
+	if (sender == self.aButton) {
+		NSLog(@"A Button Pressed");
+	} else {
+		NSLog(@"B Button Pressed");
+
+	}
 }
 
 
